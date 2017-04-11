@@ -10,6 +10,7 @@ namespace testMUSIC
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello world!");
         }
     }
 }

@@ -20,20 +20,28 @@ namespace testMUSIC
             String userId = "NMC_YBS_zhoujun";// 
             String pwd = "zhouj123";// 
                                            /*   2.2 接口ID */
-            String interfaceId = "getDisaEleByTimeRange";
+            String interfaceId = "getSurfEleByTimeRangeAndStaLevels";
             /*   2.3 接口参数，多个参数间无顺序 */
             Dictionary<String, String> params1 = new Dictionary<String, String>();
             // 必选参数 
-            params1.Add("dataCode", "DISA_BASIN_TOWN"); // 资料代码 
-            params1.Add("elements", "RECORD_ID");// 检索要素：站号、小时降水 , DATA_ID, RIV_MS_CODE, AREA_RIVBASIN, POP_RIVBASIN, LENG_RIV, ORISITE, LON_ORI, LAT_ORI, ESTSITE, LON_ESTP, LAT_ESTP, CS_NAME
-            params1.Add("timeRange", "[19491001000000,20170401000000]"); // 检索时间 
+            params1.Add("dataCode", "SURF_CHN_MUL_DAY"); // 资料代码 
+            params1.Add("elements", "Station_Name," +
+                "Station_Id_d," +
+                "Year," +
+                "Mon," +
+                "Day," +
+                "PRE_Time_2020," +
+                "PRE_Time_0808"
+);// 检索要素：站号、小时降水 , DATA_ID, RIV_MS_CODE, AREA_RIVBASIN, POP_RIVBASIN, LENG_RIV, ORISITE, LON_ORI, LAT_ORI, ESTSITE, LON_ESTP, LAT_ESTP, CS_NAME
+            params1.Add("timeRange", "[20170101000000,20170110000000]"); // 检索时间 
+            params1.Add("staLevels", "011,012,013");
                                                     // 可选参数 
             //params1.Add("orderby", "RECORD_ID:ASC"); // 排序：按照站号从小到大 
                                                         //   params.put("limitCnt", "10") ; //返回最多记录数：10 
                                                         /*   2.4 返回文件的格式 */
             String dataFormat = "text";
             /*   2.5 文件的本地全路径 */
-            String savePath = "D:/Project/MUSIC/data/中小河流域基本情况资料.txt";
+            String savePath = "../../../../data/整理/中国地面日值资料201701.txt";
             /*   2.6 返回文件的描述对象 */
             RetFilesInfo retFilesInfo = new RetFilesInfo();
 
